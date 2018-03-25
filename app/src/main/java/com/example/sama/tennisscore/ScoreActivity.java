@@ -10,22 +10,72 @@ import android.widget.TextView;
 
 public class ScoreActivity extends AppCompatActivity {
 
+    void newSet(){
+        GP1=1;
+        GP2=1;
+    }
+    void newGame(){
+        ptoP1.setTextColor(Color.GREEN);
+        ptoP2.setTextColor(Color.GREEN);
+        ptoP3.setTextColor(Color.GREEN);
+        ptoP4.setTextColor(Color.BLUE);
+        ptoP5.setTextColor(Color.BLUE);
+        ptoP6.setTextColor(Color.GREEN);
+        ptoP7.setTextColor(Color.GREEN);
+        ptoP8.setTextColor(Color.GREEN);
+        ptoP9.setTextColor(Color.BLUE);
+        ptoP10.setTextColor(Color.BLUE);
+        P1=1;
+        P2=1;
+        numGame.setText("GAME "+G);
+    }
     void matchPoint(int P1, int P2){
         if (P1>3 && (P1-P2)>=1){
-            statusA.setText("MatchPoint");
+            statusA.setText("Game Point");
+            if(GP1==5){
+                statusA.setText("SET POINT");
+            }
             statusB.setText("");
         }
         if (P1>4 && P1-P2>1 ) {
-            statusA.setText("P1 GANADOR");
+            statusA.setText("P1 GAME");
             GP1+=1;
+            G+=1;
+            nGameA.setText("0"+(GP1-1));
+            if(GP1>=6 && (GP1-GP2)>1){
+                SP1+=1;
+                nSetA.setText("SET "+(SP1-1));
+                nSet+=1;
+                numSet.setText("0"+nSet);
+                numGame.setText("GAME 1");
+                G=1;
+                newSet();
+            }
+            newGame();
+
         }
         if (P2>3 && (P2-P1)>=1){
-            statusB.setText("MatchPoint");
+            statusB.setText("Game Point");
+            if(GP2==5){
+                statusB.setText("SET POINT");
+            }
             statusA.setText("");
         }
         if (P2>4 && P2-P1>1 ) {
-            statusB.setText("P2 GANADOR");
+            statusB.setText("P2 GAME");
             GP2+=1;
+            G+=1;
+            nGameB.setText("0"+(GP2-1));
+            if(GP2>=6 && (GP2-GP1)>1){
+                SP2+=1;
+                nSetB.setText("SET 0"+(SP2-1));
+                nSet+=1;
+                numSet.setText("0"+nSet);
+                numGame.setText("GAME 1");
+                G=1;
+                newSet();
+            }
+            newGame();
         }
     }
     void deuce(int P1,int P2){
@@ -43,7 +93,6 @@ public class ScoreActivity extends AppCompatActivity {
         }
     }
 
-
     private Button btnP1;
     private Button btnP2;
     private TextView ptoP1;
@@ -58,12 +107,20 @@ public class ScoreActivity extends AppCompatActivity {
     private TextView ptoP10;
     private TextView statusA;
     private TextView statusB;
+    private TextView numSet;
+    private TextView numGame;
+    public static int nSet =1;
+    public static int G=1;
     public static int P1 = 1;
     public static int P2 = 1;
     public static int GP1 = 1;
     public static int GP2 = 1;
     public static int SP1 = 1;
     public static int SP2 = 1;
+    private TextView nSetA;
+    private TextView nGameA;
+    private TextView nSetB;
+    private TextView nGameB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +140,12 @@ public class ScoreActivity extends AppCompatActivity {
         ptoP8 = (TextView)findViewById(R.id.ptos8);
         ptoP9 = (TextView)findViewById(R.id.ptos9);
         ptoP10 = (TextView)findViewById(R.id.ptos10);
+        numSet  = (TextView)findViewById(R.id.nSet);
+        numGame = (TextView)findViewById(R.id.nGame);
+        nSetA  = (TextView)findViewById(R.id.SetsA);
+        nGameA = (TextView)findViewById(R.id.gamesA);
+        nSetB  = (TextView)findViewById(R.id.SetsB);
+        nGameB = (TextView)findViewById(R.id.gamesB);
 
 
 

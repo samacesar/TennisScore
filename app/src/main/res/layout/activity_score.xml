@@ -19,6 +19,7 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/nSet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -36,6 +37,7 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/nGame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -72,6 +74,23 @@
             android:gravity="center"
             android:text="P1"
             android:textSize="26dp" />
+        <TextView
+            android:id="@+id/SetsA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="00"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/gamesA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="00"
+            android:textSize="26dp" />
 
         <TextView
             android:id="@+id/puntosA"
@@ -82,6 +101,8 @@
             android:gravity="center"
             android:text="00"
             android:textSize="26dp" />
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -166,6 +187,24 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="P2"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/SetsB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="00"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/gamesB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="00"
             android:textSize="26dp" />
 
         <TextView
