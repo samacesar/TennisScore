@@ -11,7 +11,9 @@
         android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@android:color/background_dark"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,8 +26,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Set 1"
-                android:textSize="26dp" />
+                android:text="SET 1"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="26dp"
+                android:textStyle="bold" />
             />
         </LinearLayout>
 
@@ -34,7 +38,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark">
+            >
 
             <TextView
                 android:id="@+id/nGame"
@@ -43,14 +49,17 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="GAME 1"
-                android:textSize="26dp" />
+                android:textColor="@android:color/darker_gray"
+                android:textSize="26dp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark">
 
         <TextView
             android:id="@+id/statusA"
@@ -58,6 +67,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="GANADOR"
+            android:textColor="@android:color/darker_gray"
             android:textSize="26sp"
             android:visibility="invisible" />
 
@@ -66,7 +76,8 @@
     <LinearLayout
         android:id="@+id/scoreA"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
 
         <EditText
             android:id="@+id/P1in"
@@ -75,7 +86,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="P1"
-            android:textSize="18dp" />
+            android:textColor="@color/colorAccent"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/SetsA"
             android:layout_width="match_parent"
@@ -83,7 +97,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="00"
-            android:textSize="26dp" />
+            android:textColor="@color/Score_Yellow"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/gamesA"
@@ -92,17 +108,21 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="00"
-            android:textSize="26dp" />
+            android:textColor="@color/Score_Yellow"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/puntosA"
-
+            android:background="@android:color/background_dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:text="00"
-            android:textSize="26dp" />
+            android:textColor="@color/Score_Yellow"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -110,7 +130,8 @@
     <LinearLayout
         android:id="@+id/marcadoresA"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
 
         <TextView
             android:id="@+id/ptos1"
@@ -119,8 +140,9 @@
             android:layout_weight="5"
             android:gravity="center"
             android:text="O"
-            android:textColor="@android:color/holo_green_light"
-            android:textSize="26dp" />
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/ptos2"
@@ -129,8 +151,9 @@
             android:layout_weight="5"
             android:gravity="center"
             android:text="O"
-            android:textColor="@android:color/holo_green_light"
-            android:textSize="26dp" />
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/ptos3"
@@ -139,8 +162,9 @@
             android:layout_weight="5"
             android:gravity="center"
             android:text="O"
-            android:textColor="@android:color/holo_green_light"
-            android:textSize="26dp" />
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/ptos4"
@@ -150,7 +174,8 @@
             android:gravity="center"
             android:text="O"
             android:textColor="@android:color/holo_blue_light"
-            android:textSize="26dp" />
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/ptos5"
@@ -160,13 +185,15 @@
             android:gravity="center"
             android:text="O"
             android:textColor="@android:color/holo_blue_light"
-            android:textSize="26dp" />
+            android:textSize="26dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark">
 
         <TextView
             android:id="@+id/statusB"
@@ -174,7 +201,9 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="GANADOR"
+            android:textColor="@android:color/darker_gray"
             android:textSize="26sp"
+            android:textStyle="bold"
             android:visibility="invisible" />
 
     </LinearLayout>
@@ -182,7 +211,8 @@
     <LinearLayout
         android:id="@+id/scoresB"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
 
         <EditText
             android:id="@+id/P2in"
@@ -191,7 +221,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="P2"
-            android:textSize="18dp" />
+            android:textColor="@color/colorAccent"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/SetsB"
@@ -200,7 +232,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="00"
-            android:textSize="26dp" />
+            android:textColor="@color/Score_Yellow"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/gamesB"
@@ -209,23 +243,28 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="00"
-            android:textSize="26dp" />
+            android:textColor="@color/Score_Yellow"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/puntosB"
-
+            android:background="@android:color/background_dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:text="00"
-            android:textSize="26dp" />
+            android:textColor="@color/Score_Yellow"
+            android:textSize="26dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/marcadoresB"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
 
         <TextView
             android:id="@+id/ptos6"
@@ -234,8 +273,9 @@
             android:layout_weight="5"
             android:gravity="center"
             android:text="O"
-            android:textColor="@android:color/holo_green_light"
-            android:textSize="26dp" />
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/ptos7"
@@ -244,8 +284,9 @@
             android:layout_weight="5"
             android:gravity="center"
             android:text="O"
-            android:textColor="@android:color/holo_green_light"
-            android:textSize="26dp" />
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/ptos8"
@@ -254,8 +295,9 @@
             android:layout_weight="5"
             android:gravity="center"
             android:text="O"
-            android:textColor="@android:color/holo_green_light"
-            android:textSize="26dp" />
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/ptos9"
@@ -265,7 +307,8 @@
             android:gravity="center"
             android:text="O"
             android:textColor="@android:color/holo_blue_light"
-            android:textSize="26dp" />
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/ptos10"
@@ -275,21 +318,24 @@
             android:gravity="center"
             android:text="O"
             android:textColor="@android:color/holo_blue_light"
-            android:textSize="26dp" />
+            android:textSize="26dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark">
 
         <TextView
             android:id="@+id/ganador"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/background_dark"
             android:gravity="center"
             android:text="GANADOR"
-            android:textColor="@android:color/holo_blue_light"
+            android:textColor="@color/Score_Yellow"
             android:textSize="30dp"
             android:visibility="invisible" />
 
@@ -299,7 +345,8 @@
         android:id="@+id/botones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark">
 
         <Button
             android:id="@+id/masP1"
@@ -320,15 +367,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark">
 
         <TextView
             android:id="@+id/P1B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="P1 scores"
+            android:layout_weight="1"
             android:gravity="center"
-            android:layout_weight="1"/>
+            android:text="P1 scores"
+            android:textColor="@android:color/darker_gray"
+            android:textStyle="bold" />
         <Button
             android:id="@+id/restart"
             android:layout_width="wrap_content"
@@ -336,13 +386,16 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="RESTART"/>
+
         <TextView
             android:id="@+id/P2B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="P2 scores"
+            android:layout_weight="1"
             android:gravity="center"
-            android:layout_weight="1"/>
+            android:text="P2 scores"
+            android:textColor="@android:color/darker_gray"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </LinearLayout>

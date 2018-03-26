@@ -30,10 +30,13 @@ public class ScoreActivity extends AppCompatActivity {
         if (SP1==3) {
             winner.setText("WINNER: "+inP1.getText());
             winner.setVisibility(View.VISIBLE);
+            statusA.setVisibility(View.INVISIBLE);
         }
         if (SP2==3) {
             winner.setText("WINNER: "+inP2.getText());
             winner.setVisibility(View.VISIBLE);
+            statusB.setVisibility(View.INVISIBLE);
+
 
         }
         GP1=1;
@@ -42,16 +45,16 @@ public class ScoreActivity extends AppCompatActivity {
         nGameB.setText("00");
     }
     void newGame(){
-        ptoP1.setTextColor(Color.GREEN);
-        ptoP2.setTextColor(Color.GREEN);
-        ptoP3.setTextColor(Color.GREEN);
-        ptoP4.setTextColor(Color.BLUE);
-        ptoP5.setTextColor(Color.BLUE);
-        ptoP6.setTextColor(Color.GREEN);
-        ptoP7.setTextColor(Color.GREEN);
-        ptoP8.setTextColor(Color.GREEN);
-        ptoP9.setTextColor(Color.BLUE);
-        ptoP10.setTextColor(Color.BLUE);
+        ptoP1.setTextColor(Color.rgb(244,167,6));
+        ptoP2.setTextColor(Color.rgb(244,167,6));
+        ptoP3.setTextColor(Color.rgb(244,167,6));
+        ptoP4.setTextColor(Color.rgb(0,140,255));
+        ptoP5.setTextColor(Color.rgb(0,140,255));
+        ptoP6.setTextColor(Color.rgb(244,167,6));
+        ptoP7.setTextColor(Color.rgb(244,167,6));
+        ptoP8.setTextColor(Color.rgb(244,167,6));
+        ptoP9.setTextColor(Color.rgb(0,140,255));
+        ptoP10.setTextColor(Color.rgb(0,140,255));
         gamePointA.setText("00");
         gamePointB.setText("00");
         P1=1;
@@ -140,8 +143,8 @@ public class ScoreActivity extends AppCompatActivity {
             if(deuceB)gamePointB.setText("40");
             ScoreActivity.P1=4;
             ScoreActivity.P2=4;
-            ptoP4.setTextColor(Color.BLUE);
-            ptoP9.setTextColor(Color.BLUE);
+            ptoP4.setTextColor(Color.rgb(0,140,255));
+            ptoP9.setTextColor(Color.rgb(0,140,255));
             deuceB=true;
         }
     }
@@ -231,31 +234,31 @@ public class ScoreActivity extends AppCompatActivity {
                 BP1.setText(inP1.getText());
                 BP2.setText(inP2.getText());
                 if (P1==5){
-                    ptoP5.setTextColor(Color.RED);
+                    ptoP5.setTextColor(Color.YELLOW);
                     P1 += 1;
                     if(deuceA)gamePointA.setText("00");
 
                 }
                 if (P1==4){
-                    ptoP4.setTextColor(Color.RED);
+                    ptoP4.setTextColor(Color.YELLOW);
                     P1 += 1;
                     if(deuceA)gamePointA.setText("adv");
 
                 }
                 if (P1==3){
-                    ptoP3.setTextColor(Color.RED);
+                    ptoP3.setTextColor(Color.YELLOW);
                     P1 += 1;
                     gamePointA.setText("40");
 
                 }
                 if (P1==2){
-                    ptoP2.setTextColor(Color.RED);
+                    ptoP2.setTextColor(Color.YELLOW);
                     P1 += 1;
                     gamePointA.setText("30");
 
                 }
                 if (P1==1) {
-                    ptoP1.setTextColor(Color.RED);
+                    ptoP1.setTextColor(Color.YELLOW);
                     P1 += 1;
                     gamePointA.setText("15");
                 }
@@ -268,29 +271,29 @@ public class ScoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View view2) {
                 if (P2==5){
-                    ptoP10.setTextColor(Color.RED);
+                    ptoP10.setTextColor(Color.YELLOW);
                     if(deuceB)gamePointB.setText("00");
                     P2 += 1;
                 }
                 if (P2==4){
-                    ptoP9.setTextColor(Color.RED);
+                    ptoP9.setTextColor(Color.YELLOW);
                     if(deuceB)gamePointB.setText("adv");
                     P2 += 1;
                 }
                 if (P2==3){
-                    ptoP8.setTextColor(Color.RED);
+                    ptoP8.setTextColor(Color.YELLOW);
                     P2 += 1;
                     gamePointB.setText("40");
 
                 }
                 if (P2==2){
-                    ptoP7.setTextColor(Color.RED);
+                    ptoP7.setTextColor(Color.YELLOW);
                     P2 += 1;
                     gamePointB.setText("30");
 
                 }
                 if (P2==1) {
-                    ptoP6.setTextColor(Color.RED);
+                    ptoP6.setTextColor(Color.YELLOW);
                     P2 += 1;
                     gamePointB.setText("15");
 
