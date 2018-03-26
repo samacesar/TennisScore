@@ -19,6 +19,9 @@ public class ScoreActivity extends AppCompatActivity {
         newSet();
         numGame.setText("GAME 1");
         numSet.setText("SET 1");
+        nSetA.setText("00");
+        nSetB.setText("00");
+
         winner.setVisibility(View.INVISIBLE);
 
     }
@@ -35,6 +38,8 @@ public class ScoreActivity extends AppCompatActivity {
         }
         GP1=1;
         GP2=1;
+        nGameA.setText("00");
+        nGameB.setText("00");
     }
     void newGame(){
         ptoP1.setTextColor(Color.GREEN);
@@ -47,6 +52,8 @@ public class ScoreActivity extends AppCompatActivity {
         ptoP8.setTextColor(Color.GREEN);
         ptoP9.setTextColor(Color.BLUE);
         ptoP10.setTextColor(Color.BLUE);
+        gamePointA.setText("00");
+        gamePointB.setText("00");
         P1=1;
         P2=1;
         numGame.setText("GAME "+G);
@@ -120,15 +127,22 @@ public class ScoreActivity extends AppCompatActivity {
     void deuce(int P1,int P2){
         if(P1 == 4 && P2 == 4){
             statusA.setText("DEUCE");
+            statusA.setVisibility(View.VISIBLE);
             statusB.setText("DEUCE");
+            statusB.setVisibility(View.VISIBLE);
+            deuceA=true;
+
         }
         if(P1==5 & P2 ==5){
             statusA.setText("DEUCE");
             statusB.setText("DEUCE");
+            if(deuceA)gamePointA.setText("40");
+            if(deuceB)gamePointB.setText("40");
             ScoreActivity.P1=4;
             ScoreActivity.P2=4;
             ptoP4.setTextColor(Color.BLUE);
             ptoP9.setTextColor(Color.BLUE);
+            deuceB=true;
         }
     }
 
@@ -146,8 +160,12 @@ public class ScoreActivity extends AppCompatActivity {
     private TextView ptoP10;
     private TextView statusA;
     private TextView statusB;
+    private TextView gamePointA;
+    private TextView gamePointB;
     private TextView numSet;
     private TextView numGame;
+    boolean deuceA = false;
+    boolean deuceB = false;
     public static int nSet =1;
     public static int G=1;
     public static int P1 = 1;
@@ -197,6 +215,8 @@ public class ScoreActivity extends AppCompatActivity {
         BP1 = (TextView)findViewById(R.id.P1B);
         BP2 = (TextView)findViewById(R.id.P2B);
         RST = (Button)findViewById(R.id.restart);
+        gamePointA = (TextView)findViewById(R.id.puntosA);
+        gamePointB = (TextView)findViewById(R.id.puntosB);
 
         RST.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -213,22 +233,31 @@ public class ScoreActivity extends AppCompatActivity {
                 if (P1==5){
                     ptoP5.setTextColor(Color.RED);
                     P1 += 1;
+                    if(deuceA)gamePointA.setText("00");
+
                 }
                 if (P1==4){
                     ptoP4.setTextColor(Color.RED);
                     P1 += 1;
+                    if(deuceA)gamePointA.setText("adv");
+
                 }
                 if (P1==3){
                     ptoP3.setTextColor(Color.RED);
                     P1 += 1;
+                    gamePointA.setText("40");
+
                 }
                 if (P1==2){
                     ptoP2.setTextColor(Color.RED);
                     P1 += 1;
+                    gamePointA.setText("30");
+
                 }
                 if (P1==1) {
                     ptoP1.setTextColor(Color.RED);
                     P1 += 1;
+                    gamePointA.setText("15");
                 }
                 matchPoint(P1,P2);
                 deuce(P1,P2);
@@ -240,23 +269,31 @@ public class ScoreActivity extends AppCompatActivity {
             public void onClick(View view2) {
                 if (P2==5){
                     ptoP10.setTextColor(Color.RED);
+                    if(deuceB)gamePointB.setText("00");
                     P2 += 1;
                 }
                 if (P2==4){
                     ptoP9.setTextColor(Color.RED);
+                    if(deuceB)gamePointB.setText("adv");
                     P2 += 1;
                 }
                 if (P2==3){
                     ptoP8.setTextColor(Color.RED);
                     P2 += 1;
+                    gamePointB.setText("40");
+
                 }
                 if (P2==2){
                     ptoP7.setTextColor(Color.RED);
                     P2 += 1;
+                    gamePointB.setText("30");
+
                 }
                 if (P2==1) {
                     ptoP6.setTextColor(Color.RED);
                     P2 += 1;
+                    gamePointB.setText("15");
+
                 }
                 matchPoint(P1,P2);
                 deuce(P1,P2);
