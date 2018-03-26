@@ -5,12 +5,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Scroller;
 import android.widget.TextView;
 
 public class ScoreActivity extends AppCompatActivity {
 
+    void newMatch(){
+        newGame();
+        SP1=1;
+        SP2=1;
+        nSet=1;
+        newSet();
+        numGame.setText("GAME 1");
+        numSet.setText("SET 1");
+        winner.setVisibility(View.INVISIBLE);
+
+    }
+
     void newSet(){
+        if (SP1==3) {
+            winner.setText("WINNER: "+inP1.getText());
+            winner.setVisibility(View.VISIBLE);
+        }
+        if (SP2==3) {
+            winner.setText("WINNER: "+inP2.getText());
+            winner.setVisibility(View.VISIBLE);
+
+        }
         GP1=1;
         GP2=1;
     }
@@ -31,9 +53,17 @@ public class ScoreActivity extends AppCompatActivity {
     }
     void matchPoint(int P1, int P2){
         if (P1>3 && (P1-P2)>=1){
-            statusA.setText("Game Point");
+            statusA.setText("GAME POINT");
+            statusA.setVisibility(View.VISIBLE);
             if(GP1==5){
                 statusA.setText("SET POINT");
+                statusA.setVisibility(View.VISIBLE);
+
+                if(SP1==2){
+                    statusA.setText("MATCH POINT");
+                    statusA.setVisibility(View.VISIBLE);
+
+                }
             }
             statusB.setText("");
         }
@@ -44,9 +74,9 @@ public class ScoreActivity extends AppCompatActivity {
             nGameA.setText("0"+(GP1-1));
             if(GP1>=6 && (GP1-GP2)>1){
                 SP1+=1;
-                nSetA.setText("SET "+(SP1-1));
+                nSetA.setText("0"+(SP1-1));
                 nSet+=1;
-                numSet.setText("0"+nSet);
+                numSet.setText("SET "+nSet);
                 numGame.setText("GAME 1");
                 G=1;
                 newSet();
@@ -55,9 +85,18 @@ public class ScoreActivity extends AppCompatActivity {
 
         }
         if (P2>3 && (P2-P1)>=1){
-            statusB.setText("Game Point");
+            statusB.setText("GAME POINT");
+            statusB.setVisibility(View.VISIBLE);
+
             if(GP2==5){
                 statusB.setText("SET POINT");
+                statusB.setVisibility(View.VISIBLE);
+
+                if(SP2==2){
+                    statusB.setText("MATCH POINT");
+                    statusB.setVisibility(View.VISIBLE);
+
+                }
             }
             statusA.setText("");
         }
@@ -68,9 +107,9 @@ public class ScoreActivity extends AppCompatActivity {
             nGameB.setText("0"+(GP2-1));
             if(GP2>=6 && (GP2-GP1)>1){
                 SP2+=1;
-                nSetB.setText("SET 0"+(SP2-1));
+                nSetB.setText("0"+(SP2-1));
                 nSet+=1;
-                numSet.setText("0"+nSet);
+                numSet.setText("SET "+nSet);
                 numGame.setText("GAME 1");
                 G=1;
                 newSet();
@@ -121,6 +160,12 @@ public class ScoreActivity extends AppCompatActivity {
     private TextView nGameA;
     private TextView nSetB;
     private TextView nGameB;
+    private TextView winner;
+    private EditText inP1;
+    private EditText inP2;
+    private TextView BP1;
+    private TextView BP2;
+    private Button RST;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,12 +191,25 @@ public class ScoreActivity extends AppCompatActivity {
         nGameA = (TextView)findViewById(R.id.gamesA);
         nSetB  = (TextView)findViewById(R.id.SetsB);
         nGameB = (TextView)findViewById(R.id.gamesB);
+        winner = (TextView)findViewById(R.id.ganador);
+        inP1 = (EditText)findViewById(R.id.P1in);
+        inP2 = (EditText)findViewById(R.id.P2in);
+        BP1 = (TextView)findViewById(R.id.P1B);
+        BP2 = (TextView)findViewById(R.id.P2B);
+        RST = (Button)findViewById(R.id.restart);
 
-
+        RST.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                newMatch();
+            }
+        });
 
         btnP1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                BP1.setText(inP1.getText());
+                BP2.setText(inP2.getText());
                 if (P1==5){
                     ptoP5.setTextColor(Color.RED);
                     P1 += 1;

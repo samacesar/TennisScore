@@ -56,9 +56,10 @@
             android:id="@+id/statusA"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="GANADOR"
             android:textSize="26sp"
-            android:gravity="center"/>
+            android:visibility="invisible" />
 
     </LinearLayout>
 
@@ -67,13 +68,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <EditText
+            android:id="@+id/P1in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:text="P1"
-            android:textSize="26dp" />
+            android:textSize="18dp" />
         <TextView
             android:id="@+id/SetsA"
             android:layout_width="match_parent"
@@ -170,9 +172,10 @@
             android:id="@+id/statusB"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="GANADOR"
             android:textSize="26sp"
-            android:gravity="center"/>
+            android:visibility="invisible" />
 
     </LinearLayout>
 
@@ -181,13 +184,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <EditText
+            android:id="@+id/P2in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:text="P2"
-            android:textSize="26dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/SetsB"
@@ -279,6 +283,16 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
+        <TextView
+            android:id="@+id/ganador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="GANADOR"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="30dp"
+            android:visibility="invisible" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -309,13 +323,21 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/P1B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="P1 scores"
             android:gravity="center"
             android:layout_weight="1"/>
-
+        <Button
+            android:id="@+id/restart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="RESTART"/>
         <TextView
+            android:id="@+id/P2B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="P2 scores"
